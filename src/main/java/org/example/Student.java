@@ -1,44 +1,62 @@
 package org.example;
+import com.google.gson.annotations.SerializedName;
 
 public class Student {
-    String fullName;
-    String universityId;
-    int currentCourseNumber;
-    float avgExamScore;
 
-    public int getCurrentCourseNumber() {
-        return currentCourseNumber;
-    }
+    @SerializedName("studentName")
+    private String fullName;
+    @SerializedName("universityId")
+    private String universityId;
+    @SerializedName("course")
+    private int currentCourseNumber;
+    @SerializedName("avgScore")
+    private float avgExamScore;
 
-    public void setCurrentCourseNumber(int currentCourseNumber) {
-        this.currentCourseNumber = currentCourseNumber;
-    }
-
-    public float getAvgExamScore() {
-        return avgExamScore;
-    }
-
-    public void setAvgExamScore(float avgExamScore) {
-        this.avgExamScore = avgExamScore;
+    public Student() {
     }
 
     public String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public Student setFullName(String fullName) {
         this.fullName = fullName;
+        return this;
     }
 
     public String getUniversityId() {
         return universityId;
     }
 
-    public void setUniversityId(String universityId) {
+    public Student setUniversityId(String universityId) {
         this.universityId = universityId;
+        return this;
     }
 
+    public int getCurrentCourseNumber() {
+        return currentCourseNumber;
+    }
+
+    public Student setCurrentCourseNumber(int currentCourseNumber) {
+        this.currentCourseNumber = currentCourseNumber;
+        return this;
+    }
+
+    public float getAvgExamScore() {
+        return avgExamScore;
+    }
+
+    public Student setAvgExamScore(float avgExamScore) {
+        this.avgExamScore = avgExamScore;
+        return this;
+    }
+
+    @Override
     public String toString() {
-        return fullName + ", " + universityId + ", " + currentCourseNumber + ", " + avgExamScore;
+        return String.format("fullName = %s, universityId = %s, currentCourseNumber = %s, avgExamScore = %s",
+                this.fullName,
+                this.universityId,
+                this.currentCourseNumber,
+                this.avgExamScore);
     }
 }
