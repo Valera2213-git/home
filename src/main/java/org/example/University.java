@@ -2,7 +2,6 @@ package org.example;
 
 import com.google.gson.annotations.SerializedName;
 
-
 public class University {
 
     @SerializedName("universityId")
